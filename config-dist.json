@@ -1,4 +1,5 @@
 {
+  "readme": "Move this file to config.json",
   "twilio": {
     "sid" : "ACxxxxxxx",
     "token" : "blahblahbalh"
