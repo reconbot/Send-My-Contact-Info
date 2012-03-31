@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "express": "2.5.8",
-    "formidable": "1.0.9"
+    "formidable": "1.0.9",
+    "mustache": "0.4.0"
   },
   "devDependencies": {}
 }
