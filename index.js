@@ -1,9 +1,9 @@
 var express = require('express');
-var util = require('util');
-var spawn = require('child_process').spawn;
+var phone = require('./phone');
+
 
 var app = express.createServer();
-
+app.set('view engine', 'mustache');
 
 app.use(express.logger('dev'));
 app.use(express.limit('10mb'));
@@ -13,6 +13,10 @@ app.use(app.router);
 app.use(express['static']('public'));
 app.use(express.errorHandler({showMessage: true, showStack: true}));
 
+app.get('/', function(req,res,next){
+  res.render('index');
+});
+
 app.post('/sms', function(req, res, next){
   console.log( util.inspect( req.body ));
   var msg = req.body.Body;
@@ -20,12 +24,6 @@ app.post('/sms', function(req, res, next){
   res.end(msg);
 });
 
-app.post('/voice/new/', function(req, res, next){
-  console.log( util.inspect(req.body));
-
-  res.setHeader('Content-Type', 'application/xml');
-
-  res.end('I havent set up any twiml');
-});
+app.all('/voice', phone);
 
 app.listen(9991);
