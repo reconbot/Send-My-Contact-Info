@@ -62,3 +62,14 @@ Sendmycontactinfo::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 end
+#== Route Map
+# Generated on 09 Apr 2012 23:25
+#
+#                  about GET    /about(.:format)                       home#about
+#     authorized_numbers GET    /authorized_numbers(.:format)          authorized_numbers#index
+#                        POST   /authorized_numbers(.:format)          authorized_numbers#create
+#  new_authorized_number GET    /authorized_numbers/new(.:format)      authorized_numbers#new
+# edit_authorized_number GET    /authorized_numbers/:id/edit(.:format) authorized_numbers#edit
+#      authorized_number GET    /authorized_numbers/:id(.:format)      authorized_numbers#show
+#                        PUT    /authorized_numbers/:id(.:format)      authorized_numbers#update
+#                        DELETE /authorized_numbers/:id(.:format)      authorized_numbers#destroy
